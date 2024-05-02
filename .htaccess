@@ -1,0 +1,14 @@
+RewriteEngine On
+
+# Rewrite requests for the root URL to index.php
+RewriteRule ^$ index.php [L]
+RewriteRule ^$ logincode.php [L]
+RewriteRule ^$ logout.php [L]
+
+
+
+
+# Rewrite other URLs to their corresponding .php files
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/?$ $1.php [L]

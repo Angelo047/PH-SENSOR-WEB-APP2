@@ -1,0 +1,43 @@
+RewriteEngine On
+
+# Rewrite requests for specific URLs to their corresponding PHP files
+RewriteRule ^plants$ plants.php [L]
+RewriteRule ^history$ history.php [L]
+RewriteRule ^plants_details$ plants_details.php [L]
+RewriteRule ^bay_nft$ bay_nft.php [L]
+RewriteRule ^user$ user.php [L]
+RewriteRule ^my-profile$ my-profile.php [L]
+RewriteRule ^change-password$ change-password.php [L]
+RewriteRule ^all_notification$ all_notification.php [L]
+RewriteRule ^report$ report.php [L]
+RewriteRule ^activities$ activities.php [L]
+
+
+# Rewrite other URLs to their corresponding .php files
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/?$ $1.php [L]
+
+
+
+# RewriteEngine On
+
+# # Rewrite requests for the root URL to index.php
+# RewriteRule ^$ index.php [L]
+# RewriteRule ^$ plants.php [L]
+# RewriteRule ^$ history.php [L]
+# RewriteRule ^$ plants_details.php [L]
+# RewriteRule ^$ bay_nft.php [L]
+# RewriteRule ^$ user.php [L]
+# RewriteRule ^$ my-profile.php [L]
+# RewriteRule ^$ change-password.php [L]
+# RewriteRule ^$ all_notification.php [L]
+# RewriteRule ^plant-info/([^/]+)$ plant-info.php?id=$1 [L]
+# RewriteRule ^$ report.php [L]
+
+
+
+# # Rewrite other URLs to their corresponding .php files
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^([^/]+)/?$ $1.php [L]
