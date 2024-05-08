@@ -77,7 +77,7 @@
                 <form id="plantForm" method="POST" action="code.php" enctype="multipart/form-data" class="d-flex">
                     <!-- Move the buttons to the right side using flexbox -->
                     <div class="ms-auto">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: white; border: 1px solid #8f8f8f; border-radius: 4px; box-shadow: none; color: black;">Cancel</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: white; border: 1px solid #8f8f8f; border-radius: 4px; box-shadow: none; color: black;">Cancel</button>
                         <button type="submit" class="btn btn" name="add-plant-details-btn" style="background-color: #2C3090; color:white;">
                             Register
                         </button>
