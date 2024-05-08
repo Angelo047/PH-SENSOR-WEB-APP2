@@ -652,16 +652,17 @@ reportContent += `</table>`;
 reportContent += `<h3 style="margin-top: 20px; margin-bottom:20px;">Graphical Representation:</h3>
     <div style="display: flex; align-items: center;">
     <div style="margin-right: 40px;">
-    <img src="${barPlantImageURL}" alt="Bar Chart" style="height:250px; weight:250px;">
-    </div>
-    <img src="${barBayImageURL}" alt="Line Chart" style="height:250px; weight:250px;">
-    </div></div>
-    <div style="display: flex; align-items: center;">
-    <div style="margin-right: 40px;">
     <img src="${barChartImageURL}" alt="Bar Chart" style="height:250px; weight:250px;">
     </div>
     <img src="${lineChartImageURL}" alt="Line Chart" style="height:250px; weight:250px;">
     </div></div>
+    <div style="display: flex; align-items: center;">
+    <div style="margin-right: 40px;">
+    <img src="${barPlantImageURL}" alt="Bar Chart" style="height:250px; weight:250px;">
+    </div>
+    <img src="${barBayImageURL}" alt="Line Chart" style="height:250px; weight:250px;">
+    </div></div>
+
 
     `;
 
@@ -1273,8 +1274,8 @@ function saveAsPDF() {
                         }
                     },
                     y: {
+                        beginAtZero: true, // Start the y-axis scale from zero
                         ticks: {
-                            beginAtZero: true,
                             stepSize: Math.ceil(maxData / 5), // Adjust the step size dynamically based on the maximum value
                         }
                     }

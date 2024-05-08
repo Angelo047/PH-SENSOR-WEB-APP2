@@ -2,17 +2,6 @@
 session_start();
 include('includes/header.php');
 ?>
-<div class="title">
-
-<style>
-    h1 {
-        color: white;
-    }
-</style>
-
-</div>
-<h1>RLS-NES WATER PH MONITORING SYSTEM</h1>
-<div class="container">
 
 <?php
 if(isset($_SESSION['error'])){
@@ -29,51 +18,58 @@ if(isset($_SESSION['error'])){
     unset($_SESSION['error']);
 }
 ?>
-    <div class="left">
-        <div class="overlay">
-            <!-- <img src="bg/Ellipse 1.jpg" class="elipse"> -->
 
+<!DOCTYPE html>
+<!-- Coding by CodingNepal | www.codingnepalweb.com-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Login and Registration Form in HTML & CSS | CodingLab </title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <img src="bg/hydro.jpg" alt="">
+        <div class="text">
         </div>
+      </div>
     </div>
-
-    <div class="right">
-        <img src="bg/v5_1541.png" class="logo" width="20%" height="20%" style="margin-top:40px;">
-        <form name="myForm" action="logincode.php" onsubmit="return validateForm()" method="post" class="form">
-            <h2>USER LOGIN</h2>
-            <label for="email">Username</label>
-            <div class="input-container">
-                <i class="fas fa-user icon"></i>
-                <input type="text" name="email" id="email" class="box" placeholder="Username" required>
+        <form name="myForm" action="logincode.php" onsubmit="return validateForm()" method="post" class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Login</div>
+          <form action="#">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" name="email" id="email" placeholder="Enter your email" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" id="password" placeholder="Enter your password" required>
+              </div>
+              <div class="button input-box">
+                <input type="submit" value="Log In" name="login-btn" id="submit">
+              </div>
             </div>
-
-            <label for="password">Password</label>
-            <div class="input-container">
-                <i class="fas fa-lock icon"></i>
-                <input type="password" name="password" id="password" class="box" placeholder="Password" required>
-                <i class="fas icon fa-eye-slash password-toggle" onclick="togglePassword(this)"></i>
-            </div>
-            <a href="#"><span>Forgot Password?</span></a>
-            <button type="submit" name="login-btn" id="submit" class="btn btn text-bold">Log in</button>
         </form>
+      </div>
+
     </div>
-</div>
+    </div>
+    </div>
+  </div>
+</body>
+</html>
+
 
 <?php
 include('includes/scripts.php');
 include('includes/footer.php');
 ?>
-
-<script>
-    function togglePassword(icon) {
-        const passwordField = icon.previousElementSibling;
-        if (passwordField.type === "password") {
-            passwordField.type = "text";
-            icon.classList.remove("fa-eye-slash");
-            icon.classList.add("fa-eye");
-        } else {
-            passwordField.type = "password";
-            icon.classList.remove("fa-eye");
-            icon.classList.add("fa-eye-slash");
-        }
-    }
-</script>
