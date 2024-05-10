@@ -106,7 +106,7 @@
                           // Provide "See More" functionality
                           ?>
                           <div class="text-center">
-                              <a href="#" class="btn see-more-btn" style="background-color:#2C3090; color:white;">See More</a>
+                              <a href="#" class="btn see-more-btn" style="background-color:#3f51b5; color:white;">See More</a>
                           </div>
                           <?php
                       } else {

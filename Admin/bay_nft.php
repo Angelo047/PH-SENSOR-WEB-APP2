@@ -39,16 +39,16 @@ include('includes/navbar.php');
 
 
 #searchInputmyTable {
-        outline-color: #2C3090;
+        outline-color: #3f51b5;
     }
 #searchInputmyTable2 {
-        outline-color: #2C3090;
+        outline-color: #3f51b5;
     }
 #searchInputmyTable:hover + button i {
-        color: #2C3090;
+        color: #3f51b5;
     }
 #searchInputmyTable2:hover + button i {
-        color: #2C3090;
+        color: #3f51b5;
     }
 @media (max-width: 576px) {
     .card-header {
@@ -153,7 +153,7 @@ include('includes/navbar.php');
                                     </div>
                                 </div>
                                 <h4 class="font-weight-bold text-primary mb-0">
-                                    <a href="#addbay" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModal1" class="btn" style="background-color: #2C3090; color: white;">REGISTER</a>
+                                    <a href="#addbay" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModal1" class="btn" style="background-color: #3f51b5; color: white;">REGISTER</a>
                                 </h4>
                             </div>
 
@@ -186,7 +186,7 @@ include('includes/navbar.php');
                                                         <td><?= $row['placement']; ?></td>
 
                                                         <td>
-                                                        <a class="btn btn-link edit-bay text-white mb-2" name="edit-bay" style="text-decoration: none;" onmouseover="this.querySelector('i').style.color='#2C3090';" onmouseout="this.querySelector('i').style.color='grey';"><i class="fa-solid fa-pen" style="color: #8f8f8f;"></i></a>
+                                                        <a class="btn btn-link edit-bay text-white mb-2" name="edit-bay" style="text-decoration: none;" onmouseover="this.querySelector('i').style.color='#3f51b5';" onmouseout="this.querySelector('i').style.color='grey';"><i class="fa-solid fa-pen" style="color: #8f8f8f;"></i></a>
                                                         <a class="btn btn-link delete-bay px-3 mb-2" name="delete-bay" style="text-decoration: none;" onmouseover="this.querySelector('i').style.color='red';" onmouseout="this.querySelector('i').style.color='grey';"><i class="fa-solid fa-trash" style="color: #8f8f8f;"></i></a>
                                                         </td>
                                                     </tr>

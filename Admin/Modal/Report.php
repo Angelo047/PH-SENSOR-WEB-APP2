@@ -67,9 +67,8 @@
                 <!-- Report content will be dynamically generated here -->
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <!-- <button type="button" class="btn btn-primary" onclick="printReport()">Print</button> -->
-                <button type="button" class="btn btn-primary" onclick="saveAsPDF()">GENERATE</button>
+                <button type="button" class="btn btn" onclick="saveAsPDF()" style="background-color:#3f51b5; color:white;"><i class="fa-solid fa-file-arrow-down"></i> GENERATE</button>
             </div>
         </div>
     </div>

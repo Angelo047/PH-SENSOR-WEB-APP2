@@ -50,12 +50,12 @@
       <span id="notification-count" class="badge badge-danger navbar-badge"></span>
     </a>
     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" id="notifications-container">
-      <div class="dropdown-header" style="background-color:#2C3090;">
+      <div class="dropdown-header" style="background-color:#3f51b5;">
         <p class="text-white">Notifications</p>
         <span class="float-right text-muted text-sm"></span>
       </div>
       <div id="notifications-list"></div>
-      <a href="all_notification" class="dropdown-footer" style="text-align: center; color:#2C3090;">See All Notifications</a>
+      <a href="all_notification" class="dropdown-footer" style="text-align: center; color:#3f51b5;">See All Notifications</a>
     </div>
   </li>
 
@@ -87,7 +87,7 @@
 
     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
         <!-- User image -->
-        <li class="user-header" style="background-color:#2C3090;">
+        <li class="user-header" style="background-color:#3f51b5;">
             <?php if ($user->photoUrl !== null) : ?>
                 <img src="<?= $user->photoUrl ?>" class="img-fluid rounded-circle elevation-2" alt="User Image">
             <?php else : ?>
@@ -125,7 +125,7 @@
     <a href="#" class="brand-link text-center">
         <br>
         <img src="pics/logo.png" alt="Logo" class="" style="height: 100px; width: 100px;">
-        <h3 style="color: #2C3090; padding-top: 20px;">RLS-NES</h3>
+        <h3 style="color: #3f51b5; padding-top: 20px;">RLS-NES</h3>
     </a>
     <br>
         <!-- Sidebar Menu -->

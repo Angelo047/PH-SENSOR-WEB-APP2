@@ -19,7 +19,7 @@
             </div>
             <div class="modal-footer d-flex justify-content-end align-items-center mt-3">
              <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: white; border: 1px solid #8f8f8f; border-radius: 4px; box-shadow: none; color: black;">Cancel</button>
-              <button type="submit" class="btn btn-primary" name="add-bay-btn" style="background-color: #2C3090; box-shadow: none;">
+              <button type="submit" class="btn btn-primary" name="add-bay-btn" style="background-color: #3f51b5; box-shadow: none;">
                Register
               </button>
             </form>
@@ -54,7 +54,7 @@
         </div>
         <div class="modal-footer d-flex justify-content-end align-items-center mt-3">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: white; border: 1px solid #8f8f8f; border-radius: 4px; box-shadow: none; color: black;">Cancel</button>
-          <button type="submit" class="btn btn-primary" name="edit-bay-btn" style="background-color: #2C3090; box-shadow: none;">Update</button>
+          <button type="submit" class="btn btn-primary" name="edit-bay-btn" style="background-color: #3f51b5; box-shadow: none;">Update</button>
         </form>
       </div>
     </div>

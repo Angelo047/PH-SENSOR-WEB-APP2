@@ -129,7 +129,7 @@ if(isset($_SESSION['verified_user_id']))
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group mb-3">
-                                    <a href="change-password" class="btn btn" style="background-color: #2C3090; color:white;">Change Password</a>
+                                    <a href="change-password" class="btn btn" style="background-color: #3f51b5; color:white;">Change Password</a>
                                 </div>
                             </div>
 
@@ -200,7 +200,7 @@ if(isset($_SESSION['verified_user_id']))
                         <div class="col-md-12">
                             <hr>
                             <div class="form-group float-right">
-                                <button type="submit" name="update_user_profile" class="btn btn" style="background-color: #2C3090; color:white;">Update Profile</button>
+                                <button type="submit" name="update_user_profile" class="btn btn" style="background-color: #3f51b5; color:white;">Update Profile</button>
                             </div>
                         </div>
                     </div>
@@ -243,7 +243,7 @@ if(isset($_SESSION['verified_user_id']))
                         <label for="password" class="form-label">Password</label>
                         <input type="password" id="password" name="password" class="form-control" required>
                     </div>
-                    <button type="submit" class="btn btn" style="background-color: #2C3090; color: white; float: right;">Submit</button>
+                    <button type="submit" class="btn btn" style="background-color: #3f51b5; color: white; float: right;">Submit</button>
                 </form>
             </div>
         </div>

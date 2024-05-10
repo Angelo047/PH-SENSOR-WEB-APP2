@@ -287,7 +287,7 @@ foreach ($plants_ref->getValue() as $key => $plant) {
                         <h3 class="card-title" style="padding-top:8px;">WATER pH LEVEL UPDATE</h3>
                         <div>
                             <!-- Change the button to call a JavaScript function when clicked -->
-                            <button class="btn btn-primary btn-sm" onclick="createReport()"><i class="fa-solid fa-chart-simple"></i> Create Report</button>
+                            <button class="btn btn btn-sm" onclick="createReport()" style="background-color:#3f51b5; color:white;"><i class="fa-solid fa-chart-simple"></i> Create Report</button>
                         </div>
                     </div>
                 </div>

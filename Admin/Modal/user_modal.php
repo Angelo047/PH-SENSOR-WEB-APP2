@@ -44,7 +44,7 @@
                 </div>
                 <div class="modal-footer  justify-content-end mt-3">
                 <button type="button" class="btn btn-secondary" data-mdb-ripple-init data-dismiss="modal" style="background-color: white; border: 1px solid #8f8f8f; border-radius: 10px; box-shadow: none; color: black;">Cancel
-                    <button type="submit" class="btn btn" style="background-color: #2C3090; color:white;" name="register-btn">
+                    <button type="submit" class="btn btn" style="background-color: #3f51b5; color:white;" name="register-btn">
                      Add User
                     </button>
                 </form>
@@ -103,7 +103,7 @@
             <div class="modal-footer justify-content-end mt-3">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: white; border: 1px solid #8f8f8f; border-radius: 4px; box-shadow: none; color: black;">Cancel</button>
 
-                <button type="submit" class="btn btn" style="background-color: #2C3090; color:white;" name="edit-user-details-btn"> Save</button>
+                <button type="submit" class="btn btn" style="background-color: #3f51b5; color:white;" name="edit-user-details-btn"> Save</button>
                 </form>
             </div>
         </div>

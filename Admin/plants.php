@@ -137,7 +137,7 @@ $nftData = $nftRef->getValue();
                         </div>
                     </div>
                     <h4 class="font-weight-bold text-white mb-0">
-                                        <a href="#addplants" data-toggle="modal" class="btn btn" style="background-color: #2C3090 !important; color:white; height: 31px; font-size: 10px; line-height: 12px;">
+                                        <a href="#addplants" data-toggle="modal" class="btn btn" style="background-color: #3f51b5 !important; color:white; height: 31px; font-size: 10px; line-height: 12px;">
                                             Add Plants
                                         </a>
                                     </h4>
@@ -185,8 +185,8 @@ if (isset($_SESSION['verified_user_id'])) {
                                                         <td><?= $row['plant_status']; ?></td>
 
                                                         <td data-id="<?= $key ?>">
-                                                            <a href="plant-info.php?id=<?= $key; ?>" class="btn btn-link" abbr title="view plant info" abbr id="abbr1" style="text-decoration: none;" onmouseover="this.querySelector('i').style.color='#2C3090';" onmouseout="this.querySelector('i').style.color='grey';"><i class="fa-solid fa-eye" style="color: grey;"></i></a>
-                                                            <a href="report.php?id=<?= $key; ?>" class="btn btn-link" abbr title="create a report" abbr id="abbr2" style="text-decoration: none;" onmouseover="this.querySelector('i').style.color='#2C3090';" onmouseout="this.querySelector('i').style.color='grey';"><i class="fa-solid fa-clipboard" style="color: grey;"></i></a>
+                                                            <a href="plant-info.php?id=<?= $key; ?>" class="btn btn-link" abbr title="view plant info" abbr id="abbr1" style="text-decoration: none;" onmouseover="this.querySelector('i').style.color='#3f51b5';" onmouseout="this.querySelector('i').style.color='grey';"><i class="fa-solid fa-eye" style="color: grey;"></i></a>
+                                                            <a href="report.php?id=<?= $key; ?>" class="btn btn-link" abbr title="create a report" abbr id="abbr2" style="text-decoration: none;" onmouseover="this.querySelector('i').style.color='#3f51b5';" onmouseout="this.querySelector('i').style.color='grey';"><i class="fa-solid fa-clipboard" style="color: grey;"></i></a>
 
                                                             <?php
                                                             $claims = $auth->getUser($user->uid)->customClaims;

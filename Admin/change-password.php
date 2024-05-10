@@ -106,7 +106,7 @@ if(isset($_SESSION['success'])){
                                     <span id="retypePasswordSuccess" class="text-success" style="display: none;">Passwords match.</span>
                                 </div>
                                 <div class="form-group mb-3 mt-5">
-                                    <button type="submit" name="change_password_btn" class="btn btn btn-block" style="background-color: #2C3090; color:white;">Change Password</button>
+                                    <button type="submit" name="change_password_btn" class="btn btn btn-block" style="background-color: #3f51b5; color:white;">Change Password</button>
                                 </div>
                             </form>
                         <?php

@@ -107,7 +107,7 @@ include('includes/navbar.php');
         opacity: 0;
     }
     .switch-input:checked ~ .switch-label {
-        background-color: #2C3090;
+        background-color: #3f51b5;
         box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
     }
     .switch-input:checked ~ .switch-label:before {
@@ -330,7 +330,7 @@ include('includes/navbar.php');
                                         </div>
                                         <input type="hidden" name="id" value="<?= $key_child ?>">
                                         <div class="col-md-12 text-right mb-3">
-                                            <button type="submit" class="btn btn"  style="background-color: #2C3090 !important; color:white;" id="updateStatusButton" <?= ($isWitheredOrHarvested || $isPlanted) ? 'disabled' : '' ?>>Update Status</button>
+                                            <button type="submit" class="btn btn"  style="background-color: #3f51b5 !important; color:white;" id="updateStatusButton" <?= ($isWitheredOrHarvested || $isPlanted) ? 'disabled' : '' ?>>Update Status</button>
                                         </div>
 
 
@@ -376,7 +376,7 @@ include('includes/navbar.php');
 
                             <div class="col-md-3">
     <div class="text-center">
-        <input id="knob" type="text" class="knob" value="39" data-skin="tron" data-thickness="0.2" data-width="250" data-height="250" data-fgColor="#2C3090" readonly>
+        <input id="knob" type="text" class="knob" value="39" data-skin="tron" data-thickness="0.2" data-width="250" data-height="250" data-fgColor="#3f51b5" readonly>
         <div class="knob-label"><b>Days before Harvest</b></div>
     </div>
 </div>

@@ -17,8 +17,8 @@
     }
 
     .btn-primary {
-        background-color: #2C3090;
-        border-color: #2C3090; /* Optional: If you want to change the border color */
+        background-color: #3f51b5;
+        border-color: #3f51b5; /* Optional: If you want to change the border color */
     }
 
     .btn-primary:hover {
@@ -78,7 +78,7 @@
                     <!-- Move the buttons to the right side using flexbox -->
                     <div class="ms-auto">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: white; border: 1px solid #8f8f8f; border-radius: 4px; box-shadow: none; color: black;">Cancel</button>
-                        <button type="submit" class="btn btn" name="add-plant-details-btn" style="background-color: #2C3090; color:white;">
+                        <button type="submit" class="btn btn" name="add-plant-details-btn" style="background-color: #3f51b5; color:white;">
                             Register
                         </button>
                     </div>
@@ -129,7 +129,7 @@
                     </div>
             <div class="modal-footer justify-content-end mt-3">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: white; border: 1px solid #8f8f8f; border-radius: 4px; box-shadow: none; color: black;">Cancel</button>
-                <button type="submit" class="btn btn" name="edit-plant-details-btn" style="background-color: #2C3090; color:white;">Update</button>
+                <button type="submit" class="btn btn" name="edit-plant-details-btn" style="background-color: #3f51b5; color:white;">Update</button>
                 </form>
             </div>
         </div>

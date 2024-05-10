@@ -112,7 +112,7 @@ foreach($allBayData as $bay) {
                     <div class="modal-footer d-flex justify-content-end align-items-center mt-3">
                         <button type="button" class="btn btn-secondary" data-mdb-ripple-init data-dismiss="modal" style="background-color: white; border: 1px solid #8f8f8f; border-radius: 10px; box-shadow: none; color: black;">Cancel
                         </button>
-                        <button type="submit" class="btn btn-primary" data-mdb-ripple-init name="add-plant-btn" style="background-color: #2C3090; box-shadow: none;">Add Plant
+                        <button type="submit" class="btn btn-primary" data-mdb-ripple-init name="add-plant-btn" style="background-color: #3f51b5; box-shadow: none;">Add Plant
                         </button>
                     </div>
                 </form>

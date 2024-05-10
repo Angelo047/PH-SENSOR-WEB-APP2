@@ -111,7 +111,7 @@ include('includes/navbar.php');
 </div>
     <div class="col">
         <h4 class="font-weight-bold text-primary">
-            <a href="#addnew" data-toggle="modal" class="btn btn" style="background-color: #2C3090; color:white;"> &nbsp;
+            <a href="#addnew" data-toggle="modal" class="btn btn" style="background-color: #3f51b5; color:white;"> &nbsp;
                 ADD USER
             </a>
         </h4>
@@ -182,7 +182,7 @@ include('includes/navbar.php');
                                             ?>
                                         </td>
                                     <td>
-                                        <a href="#" class="btn btn-link edit-user mb-2" data-id="<?= $user->uid ?>"><i class="fa-solid fa-pen" style="color: #2C3090;"></i></a>
+                                        <a href="#" class="btn btn-link edit-user mb-2" data-id="<?= $user->uid ?>"><i class="fa-solid fa-pen" style="color: #3f51b5;"></i></a>
                                         <a href="#" class="btn btn-link delete-user mb-2" data-id="<?= $user->uid ?>"><i class="fa-solid fa-trash" style="color: red;"></i></a>
                                     </td>
                                 </tr>

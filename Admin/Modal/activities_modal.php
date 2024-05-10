@@ -81,6 +81,60 @@
             width: 48%;
             padding-left: 8px;
         }
+        .column {
+            width: 50%; /* By default, take full width */
+            margin-bottom: 10px; /* Add some margin between columns */
+        }
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%; /* Take full width on smaller screens */
+            }
+        }
+
+       /* CSS for adjusting spacing in Plant-specific Analysis for mobile devices */
+
+@media only screen and (max-width: 767px) {
+    /* Decrease margin top of the second column */
+    .modal-body .row .low-ph-column {
+        margin-top: -50px; /* Decrease margin top */
+    }
+}
+/* CSS for aligning Plant-specific Analysis for all screen sizes */
+
+.modal-body .plant-analysis-row {
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Align items vertically */
+}
+
+.modal-body .plant-analysis-row .column {
+    flex: 1; /* Take up equal space */
+}
+
+/* For tablet size (768px - 991px) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .modal-body .plant-analysis-row {
+        flex-direction: row; /* Align items horizontally */
+    }
+
+    /* Add margin-top for low-ph-column */
+    .modal-body .plant-analysis-row .low-ph-column {
+        margin-top: 29px;
+    }
+}
+
+/* For web size (992px and above) */
+@media only screen and (min-width: 992px) {
+    .modal-body .plant-analysis-row {
+        flex-direction: row; /* Align items horizontally */
+        justify-content: space-between; /* Distribute items evenly */
+    }
+
+    /* Adjust margin-top for both columns */
+    .modal-body .plant-analysis-row .high-ph-column,
+    .modal-body .plant-analysis-row .low-ph-column {
+        margin-top: 8px; /* Margin top to align with the low-ph column's margin */
+    }
+}
 
 
 </style>
@@ -143,27 +197,28 @@
 
                         <div class="column">
                             <h3>Frequency Counts</h3>
-                            <br>
+                            <!-- <br> -->
                             <p><strong>Numbers of Log:</strong> <span id="numLogged"></span></p>
                             <p><strong>Low Status:</strong> <span id="LowStatus"></span></p>
                             <p><strong>High Status:</strong> <span id="HighStatus"></span></p>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="column">
-                            <h3>Plant-specific Analysis</h3>
-                            <p><strong>Plants with High pH Level:</strong> <span id="highPHPlants"></span></p>
-                            <textarea id="highPHPlantsDetails" readonly></textarea>
-                        </div>
 
-                        <div class="column">
-                            <h3></h3>
-                            <br>
-                            <p style="margin-top:10px"><strong>Plants with Low pH Level:</strong> <span id="lowPHPlants"></span></p>
-                            <textarea id="lowPHPlantsDetails" readonly></textarea>
-                        </div>
-                    </div>
+                    <div class="row plant-analysis-row">
+    <div class="column high-ph-column">
+        <h3>Plant-specific Analysis</h3>
+        <p><strong>Plants with High pH Level:</strong> <span id="highPHPlants"></span></p>
+        <textarea id="highPHPlantsDetails" readonly></textarea>
+    </div>
+
+    <div class="column low-ph-column">
+        <h3></h3>
+        <br>
+        <p style="margin-top:8px"><strong>Plants with Low pH Level:</strong> <span id="lowPHPlants"></span></p>
+        <textarea id="lowPHPlantsDetails" readonly></textarea>
+    </div>
+</div>
 
 
 
@@ -180,9 +235,9 @@
                 <!-- Report content will be dynamically generated here -->
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary mr-2" data-dismiss="modal" onclick="closeModal()">Close</button>
-                <button type="button" class="btn btn-primary mr-2" id="pdf-button" onclick="GeneratePdf()">
-                    <i class="fas fa-save"></i> PDF
+                <button type="button" class="btn mr-2" data-dismiss="modal" onclick="closeModal()" style="background-color: #3f51b5; color: white;">Close</button>
+                <button type="button" class="btn btn mr-2" id="pdf-button" onclick="GeneratePdf()" style="background-color: #3f51b5; color: white;">
+                        GENERATE
                 </button>
                 <!-- <button type="button" class="btn btn-primary mr-2" id="print-button" onclick="printPage()">
                     <i class="fas fa-print"></i> Print

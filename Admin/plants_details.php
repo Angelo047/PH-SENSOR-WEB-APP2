@@ -85,7 +85,7 @@ include('includes/navbar.php');
                     </div>
                 </div>
                 <h4 class="font-weight-bold text-primary mb-0">
-                    <a href="#addplantsdetails" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModal1" class="btn btn" style="background-color: #2C3090; color:white;"> &nbsp;REGISTER</a></h4>
+                    <a href="#addplantsdetails" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModal1" class="btn btn" style="background-color: #3f51b5; color:white;"> &nbsp;REGISTER</a></h4>
 
                 </h4>
             </div>
@@ -128,7 +128,7 @@ include('includes/navbar.php');
                                     <td><?= $row['days_harvest']; ?></td>
                                     <td>
 
-                                    <a class="btn btn-link edit-plant" style="text-decoration: none;" onmouseover="this.querySelector('i').style.color='#2C3090';" onmouseout="this.querySelector('i').style.color='grey';"><i class="fa-solid fa-pen" style="color: grey;"></i></a>
+                                    <a class="btn btn-link edit-plant" style="text-decoration: none;" onmouseover="this.querySelector('i').style.color='#3f51b5';" onmouseout="this.querySelector('i').style.color='grey';"><i class="fa-solid fa-pen" style="color: grey;"></i></a>
 
                                     <a class="btn btn-link delete-plant" style="text-decoration: none;" onmouseover="this.querySelector('i').style.color='red';" onmouseout="this.querySelector('i').style.color='grey';"><i class="fa-solid fa-trash" style="color: grey;"></i></a>
 

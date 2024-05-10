@@ -8,6 +8,10 @@ include('includes/navbar.php');
 $plant_id = isset($_GET["id"]) ? $_GET["id"] : null;
 ?>
 
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
 
         /* Kulay ng scrollbar */
@@ -50,7 +54,7 @@ $plant_id = isset($_GET["id"]) ? $_GET["id"] : null;
 
                 textarea {
                     width: 100%;
-                    height: 80px; /* Set the desired height for textarea */
+                    height: 80px;
                     box-sizing: border-box;
                     border: 1px solid #ccc;
                     border-radius: 4px;
@@ -85,7 +89,30 @@ $plant_id = isset($_GET["id"]) ? $_GET["id"] : null;
                     width: 48%;
                     padding-left: 8px;
                 }
+
+                @media only screen and (max-width: 600px) {
+                .form-horizontal {
+                  padding: 20px;
+                }
+
+
+                textarea {
+                  height: 120px;
+                }
+
+
+                .column {
+                  width: 100%;
+                  margin-bottom: 20px;
+                }
+              }
+
     </style>
+
+</head>
+
+
+
 
     <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -225,10 +252,15 @@ $plant_id = isset($_GET["id"]) ? $_GET["id"] : null;
 
           <div class="card-footer">
               <div class="float-right">
-                  <button type="button" class="btn btn-primary mr-2" id="pdf-button" onclick="GeneratePdf()">
-                      <i class="fas fa-save"></i> PDF
+                  <button type="button" class="btn btn mr-2" id="pdf-button" onclick="GeneratePdf()" style="background-color: #3f51b5; color: white;">
+                      <i class="fas fa-save"></i> GENERATE
                   </button>
               </div>
+              <!-- <div class="float-right">
+                  <button type="button" class="btn btn-primary mr-2" id="pdf-button" onclick="printPage()">
+                      <i class="fas fa-save"></i> PRINT
+                  </button>
+              </div> -->
           </div>
 
 

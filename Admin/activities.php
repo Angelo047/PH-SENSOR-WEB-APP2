@@ -49,16 +49,16 @@ include('includes/navbar.php');
     z-index: 1; /* Ensure the header is above the table body */
 }
 #searchInputTable2 {
-        outline-color: #2C3090;
+        outline-color: #3f51b5;
     }
 #searchInputTable3 {
-        outline-color: #2C3090;
+        outline-color: #3f51b5;
     }
 #searchInputTable2:hover + button i {
-        color: #2C3090;
+        color: #3f51b5;
     }
 #searchInputTable3:hover + button i {
-        color: #2C3090;
+        color: #3f51b5;
     }
 @media only screen and (max-width: 600px) {
     .card-header {
@@ -108,26 +108,30 @@ $bayData = $bayRef->getValue();
                                 <i class="fa fa-search"></i>
                             </button>
                         </div>
-                        <button type="button" class="btn btn-primary ml-2" id="generateReportButton" onclick="generateReportModal()">
-                            <i class="fas fa-file-alt"></i> Generate Report
-                        </button>
+                        <div class="row justify-content-center">
+                            <div class="col-auto">
+                                <button type="button" class="btn mt-2 mt-md-0 ml-md-2 pr-3" id="generateReportButton" onclick="generateReportModal()" style="background-color: #3f51b5; color: white;">
+                                    Generate Report
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="card-body">
                    <div class="row mb-5">
-                        <div class="col-3">
+                        <div class="col-sm-3">
                             <div class="form-group"> <!-- Added mb-0 class to remove margin bottom -->
                                 <label for="fromDate" class="form-label">From:</label>
                                 <input class="form-control" type="date" id="fromDate">
                             </div>
                         </div>
-                        <div class="col-3">
+                        <div class="col-sm-3">
                             <div class="form-group"> <!-- Added mb-0 class to remove margin bottom -->
                                 <label for="toDate" class="form-label">To:</label>
                                 <input class="form-control" type="date" id="toDate">
                             </div>
                         </div>
-                        <div class="col-3">
+                        <div class="col-sm-3">
                             <div class="form-group"> <!-- Added mb-0 class to remove margin bottom -->
                                 <label for="statusFilter" class="form-label">Status:</label> <!-- Added form-label class -->
                                 <select class="form-control" id="statusFilter">
@@ -137,7 +141,7 @@ $bayData = $bayRef->getValue();
                                 </select>
                             </div>
                         </div>
-                        <div class="col-3">
+                        <div class="col-sm-3">
                             <div class="form-group"> <!-- Added mb-0 class to remove margin bottom -->
                                 <label for="plantFilter" class="form-label">Plant Name:</label> <!-- Added form-label class -->
                                 <select class="form-control" id="plantFilter">
