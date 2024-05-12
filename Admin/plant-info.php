@@ -107,7 +107,7 @@ include('includes/navbar.php');
         opacity: 0;
     }
     .switch-input:checked ~ .switch-label {
-        background-color: #3f51b5;
+        background-color: #2C3090;
         box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
     }
     .switch-input:checked ~ .switch-label:before {
@@ -221,6 +221,7 @@ include('includes/navbar.php');
                 <main>
                     <div class="container-fluid px-3">
                         <!-- Main content -->
+                        <div class="card card-widget">
                         <div class="row">
                             <div class="col-xl-3">
                                 <div class="card">
@@ -245,100 +246,102 @@ include('includes/navbar.php');
                                 </div>
                             </div>
 
-                        <!-- INFO -->
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="card mb-2">
-                                <div class="card-header">
-                                    PLANT INFORMATION
-                                </div>
-                                <div class="card-body">
-                                    <form class="row g-3" method="post" action="code.php">
-                                        <!-- Plant Name -->
-                                        <div class="col-md-6">
-                                            <label for="plantName">Plant Name</label>
-                                            <input type="text" class="form-control" id="plant_name" name="plant_name" placeholder="Lettuce" value="<?= $getData['plant_name']; ?>" readonly>
-                                        </div>
-                                        <!-- Required pH Level -->
-                                        <div class="col-md-3">
-                                        <label for="plantName">Required pH lvl</label>
-                                            <label for="ph_lvl_low"></label>
-                                            <input type="text" class="form-control text-center" id="ph_lvl_low" name="ph_lvl_low" placeholder="Low pH Level" value="<?= $getData['ph_lvl_low']; ?>" readonly>
-                                        </div>
-                                        <div class="col-md-3">
-                                        <label for="plantName" class="text-white">level</label>
-                                            <label for="ph_lvl_high"></label>
-                                            <input type="text" class="form-control text-center" id="ph_lvl_high" name="ph_lvl_high" placeholder="High pH Level" value="<?= $getData['ph_lvl_high']; ?>" readonly>
-                                        </div>
-                                        <!-- Date Planted -->
-                                        <div class="col-md-6">
-                                            <label>Date Planted</label>
-                                            <div class="input-group date">
-                                            <input type="text" class="form-control" id="date_planted" name="date_planted" value="<?= date('M d, Y', strtotime($getData['date_planted'])); ?>" readonly>
-                                                <div class="input-group-append" data-target="#reservationdate">
-                                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Estimated Date Harvested -->
-                                        <div class="col-md-6">
-                                            <label>
-                                                <?php
-                                                if ($getData['plant_status'] == 'Withered') {
-                                                    echo 'Withered Date';
-                                                } elseif ($getData['plant_status'] == 'Harvested') {
-                                                    echo 'Harvested Date';
-                                                } else {
-                                                    echo 'Estimated Date Harvested';
-                                                }
-                                                ?>
-                                            </label>
-                                            <div class="input-group date">
-                                                <input type="text" class="form-control" id="dateHarvested" readonly value="<?= ($getData['plant_status'] == 'Withered' || $getData['plant_status'] == 'Harvested') ? date('M d, Y', strtotime($getData['claim_date'])) : date('M d, Y', strtotime($getData['date_harvest'])) ?>" >
-                                                <div class="input-group-append" data-target="#reservationdate">
-                                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-3">
-                                            <label>BAY</label>
-                                            <div class="input-group date">
-                                                <input type="text" class="form-control" id="bay" name="bay" placeholder="bay" value="<?= $getData['bay']; ?>">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-3">
-                                            <label>Placement</label>
-                                            <div class="input-group date">
-                                                <input type="text" class="form-control" id="nft" name="nft" placeholder="nft"  value="<?= $getData['nft']; ?>" readonly>
-                                            </div>
-                                        </div>
-
-                                        <?php
-                                        $isWitheredOrHarvested = ($getData['plant_status'] == 'Withered' || $getData['plant_status'] == 'Harvested');
-                                        $isPlanted = ($getData['plant_status'] == 'Planted');
-                                        ?>
-                                        <div class="col-md-6">
-                                            <label>Plant Status</label>
-                                            <select class="form-control" name="plant_status" id="plantStatusSelect" name="plant_status" <?= $isWitheredOrHarvested ? 'disabled' : '' ?>>
-                                                <option value="" disabled>Select Plant Status</option>
-                                                <option value="Planted" <?= $isPlanted ? 'selected' : '' ?>>Planted</option>
-                                                <option value="Harvested" <?= ($getData['plant_status'] == 'Harvested') ? 'selected' : '' ?>>Harvested</option>
-                                                <option value="Withered" <?= ($getData['plant_status'] == 'Withered') ? 'selected' : '' ?>>Withered</option>
-                                            </select>
-                                        </div>
-                                        <input type="hidden" name="id" value="<?= $key_child ?>">
-                                        <div class="col-md-12 text-right mb-3">
-                                            <button type="submit" class="btn btn"  style="background-color: #3f51b5 !important; color:white;" id="updateStatusButton" <?= ($isWitheredOrHarvested || $isPlanted) ? 'disabled' : '' ?>>Update Status</button>
-                                        </div>
 
 
+          <!-- INFO -->
+<div class="col-12 col-md- col-lg-4">
+    <div class="card-header">
+        PLANT INFORMATION
+    </div>
+    <div class="card-body">
+        <form class="row g-3" method="post" action="code.php">
+            <!-- Plant Name -->
+            <div class="col-md-6">
+                <label for="plantName">Plant Name</label>
+                <input type="text" class="form-control" id="plant_name" name="plant_name" placeholder="Lettuce" value="<?= $getData['plant_name']; ?>" readonly>
+            </div>
+            <!-- Required pH Level -->
+            <div class="col-md-3">
+                <label for="plantName">Required pH lvl</label>
+                <label for="ph_lvl_low"></label>
+                <input type="text" class="form-control text-center" id="ph_lvl_low" name="ph_lvl_low" placeholder="Low pH Level" value="<?= $getData['ph_lvl_low']; ?>" readonly>
+            </div>
+            <div class="col-md-3">
+                <label for="plantName" class="text-black"></label>
+                <label for="ph_lvl_high"></label>
+                <input type="text" class="form-control text-center" id="ph_lvl_high" name="ph_lvl_high" placeholder="High pH Level" value="<?= $getData['ph_lvl_high']; ?>" readonly>
+            </div>
+            <!-- Date Planted -->
+            <div class="col-md-6">
+                <label>Date Planted</label>
+                <div class="input-group date">
+                    <input type="text" class="form-control" id="date_planted" name="date_planted" value="<?= date('M d, Y', strtotime($getData['date_planted'])); ?>" readonly>
+                    <div class="input-group-append" data-target="#reservationdate">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                    </div>
+                </div>
+            </div>
 
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Estimated Date Harvested -->
+            <div class="col-md-6">
+                <label>
+                    <?php
+                    if ($getData['plant_status'] == 'Withered') {
+                        echo 'Withered Date';
+                    } elseif ($getData['plant_status'] == 'Harvested') {
+                        echo 'Harvested Date';
+                    } else {
+                        echo 'Estimated Date Harvested';
+                    }
+                    ?>
+                </label>
+                <div class="input-group date">
+                    <input type="text" class="form-control" id="dateHarvested" readonly value="<?= ($getData['plant_status'] == 'Withered' || $getData['plant_status'] == 'Harvested') ? date('M d, Y', strtotime($getData['claim_date'])) : date('M d, Y', strtotime($getData['date_harvest'])) ?>" >
+                    <div class="input-group-append" data-target="#reservationdate">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <label>BAY</label>
+                <div class="input-group date">
+                    <input type="text" class="form-control" id="bay" name="bay" placeholder="bay" value="<?= $getData['bay']; ?>">
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <label>Placement</label>
+                <div class="input-group date">
+                    <input type="text" class="form-control" id="nft" name="nft" placeholder="nft"  value="<?= $getData['nft']; ?>" readonly>
+                </div>
+            </div>
+
+            <?php
+            $isWitheredOrHarvested = ($getData['plant_status'] == 'Withered' || $getData['plant_status'] == 'Harvested');
+            $isPlanted = ($getData['plant_status'] == 'Planted');
+            ?>
+            <div class="col-md-6">
+                <label>Plant Status</label>
+                <select class="form-control" name="plant_status" id="plantStatusSelect" <?= $isWitheredOrHarvested ? 'disabled' : '' ?>>
+                    <option value="" disabled>Select Plant Status</option>
+                    <option value="Planted" <?= $isPlanted ? 'selected' : '' ?>>Planted</option>
+                    <option value="Harvested" <?= ($getData['plant_status'] == 'Harvested') ? 'selected' : '' ?>>Harvested</option>
+                    <option value="Withered" <?= ($getData['plant_status'] == 'Withered') ? 'selected' : '' ?>>Withered</option>
+                </select>
+            </div>
+            <input type="hidden" name="id" value="<?= $key_child ?>">
+
+            <?php if ($getData['plant_status'] !== 'Withered' && $getData['plant_status'] !== 'Harvested'): ?>
+            <div class="col-md-12 text-right mb-3">
+                <button type="submit" class="btn btn"  style="background-color: #2C3090 !important; color:white;" id="updateStatusButton">Update Status</button>
+            </div>
+            <?php endif; ?>
+        </form>
+    </div>
+</div>
+
+
 
 
                             <div class="col-lg-2 col-md-6 mt-6">
@@ -366,7 +369,11 @@ include('includes/navbar.php');
                                                     <input class="switch-input" type="checkbox" id="relay2Checkbox" checked onchange="toggleRelay(2)" />
                                                     <span class="switch-label" data-on="On" data-off="Off"></span>
                                                     <span class="switch-handle"></span>
+
                                                 </label>
+
+
+
                                             </div>
                                         </div>
                                     </div>
@@ -374,12 +381,20 @@ include('includes/navbar.php');
                             </div>
 
 
+
+
                             <div class="col-md-3">
-    <div class="text-center">
-        <input id="knob" type="text" class="knob" value="39" data-skin="tron" data-thickness="0.2" data-width="250" data-height="250" data-fgColor="#3f51b5" readonly>
-        <div class="knob-label"><b>Days before Harvest</b></div>
-    </div>
+                            <div class="card">
+                            <div class="card-header">
+                                        ESTIMATED HARVEST
+                                                            </div>
+                            <div class="text-center">
+                                <input id="knob" type="text" class="knob" value="39" data-skin="tron" data-thickness="0.2" data-width="250" data-height="250" data-fgColor="#2C3090" readonly>
+                                <div class="knob-label"><b>Days before Harvest</b></div>
+                            </div>
+                        </div>
 </div>
+
 
         <?php
 
@@ -435,7 +450,7 @@ include('includes/navbar.php');
 ?>
 
 <!-- Main content -->
-<section class="content">
+<section class="content mt-2">
     <div class="container-fluid">
         <div class="row">
 
@@ -486,7 +501,8 @@ include('includes/navbar.php');
     </div>
 
 </section>
-
+</div>
+</div>
 
 </div>
 </div>
@@ -707,7 +723,7 @@ function checkNotifications() {
 }
 
 // Set an interval to periodically check for notifications
-setInterval(checkNotifications, 10000); // 3000 milliseconds = 3 seconds, adjust as needed
+setInterval(checkNotifications, 1000000); // 3000 milliseconds = 3 seconds, adjust as needed
 </script>
 
 
@@ -904,151 +920,25 @@ $(function () {
 </script>
 
 
+
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Reference to your database
-        var notificationsRef = firebase.database().ref("notifications");
+    document.addEventListener("DOMContentLoaded", function() {
+        var plantStatusSelect = document.getElementById("plantStatusSelect");
+        var updateStatusButton = document.getElementById("updateStatusButton");
 
-        // Initialize an object to store data by bay and plant
-        var dataByBayAndPlant = {};
-
-        // Function to retrieve current data from Firebase and populate dropdowns
-        function updateCurrentDataBar() {
-            notificationsRef.on("value", function (snapshot) {
-                // Reset dataByBayAndPlant
-                dataByBayAndPlant = {};
-
-                // Iterate over the snapshot
-                snapshot.forEach(function (childSnapshot) {
-                    var data = childSnapshot.val();
-                    var bay = data.bay_name;
-                    var plant = data.plant_name;
-                    var status = data.status;
-
-                    // Create or update data entry for the specific bay, plant, and status
-                    if (!dataByBayAndPlant[bay]) dataByBayAndPlant[bay] = {};
-                    if (!dataByBayAndPlant[bay][plant]) dataByBayAndPlant[bay][plant] = { low: 0, high: 0 };
-                    if (status === "Low") {
-                        dataByBayAndPlant[bay][plant].low++;
-                    } else if (status === "High") {
-                        dataByBayAndPlant[bay][plant].high++;
-                    }
-                });
-
-                // Update the bar chart
-                updateBarChart(dataByBayAndPlant);
-            });
-        }
-
-        // Function to update the bar chart
-        function updateBarChart(data) {
-            var ctx = document.getElementById('barChart4').getContext('2d');
-
-            // Clear previous chart if exists
-            if (window.myBar) {
-                window.myBar.destroy();
-            }
-
-            // Extract data for chart
-            var bayLabels = Object.keys(data);
-            var plantLabels = Object.keys(data[bayLabels[0]]); // Assuming the first bay has all plants
-
-            var datasets = [];
-            plantLabels.forEach(function (plant) {
-                var lowData = [];
-                var highData = [];
-                bayLabels.forEach(function (bay) {
-                    if (data[bay][plant]) {
-                        lowData.push(data[bay][plant].low || 0);
-                        highData.push(data[bay][plant].high || 0);
-                    } else {
-                        lowData.push(0);
-                        highData.push(0);
-                    }
-                });
-                datasets.push({
-                    label: plant + ' (Low)',
-                    backgroundColor: '#0057b2',
-                    borderColor: 'rgba(60,141,188,0.8)',
-                    data: lowData,
-                });
-                datasets.push({
-                    label: plant + ' (High)',
-                    backgroundColor: '#FF7B5F',
-                    borderColor: 'rgba(210, 214, 222, 1)',
-                    data: highData,
-                });
-            });
-
-            // Create new chart
-            window.myBar = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: bayLabels,
-                    datasets: datasets,
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        x: {
-                            stacked: true,
-                            grid: {
-                                offset: true
-                            }
-                        },
-                        y: {
-                            stacked: true,
-                            ticks: {
-                                beginAtZero: true,
-                                precision: 0
-                            }
-                        }
-                    },
-                }
-            });
-        }
-
-        // Call updateCurrentDataBar to fetch data and update the bar chart
-        updateCurrentDataBar();
-
-        // Add event listeners to dropdowns for filtering
-        document.getElementById("Plants").addEventListener('change', filterData);
-        document.getElementById("Bays").addEventListener('change', filterData);
-
-        // Function to filter data based on dropdown selection
-        function filterData() {
-            var selectedPlant = document.getElementById("Plants").value;
-            var selectedBay = document.getElementById("Bays").value;
-
-            // If both are 'all', then show all data
-            if (selectedPlant === 'all' && selectedBay === 'all') {
-                updateBarChart(dataByBayAndPlant);
-                return;
-            }
-
-            // Filter data based on selected plant and bay
-            var filteredData = {};
-            if (selectedBay !== 'all') {
-                if (selectedPlant === 'all') {
-                    filteredData = dataByBayAndPlant[selectedBay] || {};
-                } else {
-                    filteredData[selectedBay] = dataByBayAndPlant[selectedBay] ? { [selectedPlant]: dataByBayAndPlant[selectedBay][selectedPlant] } : {};
-                }
+        // Function to enable/disable update button based on plant status
+        function toggleUpdateButton() {
+            if (plantStatusSelect.value === "Planted") {
+                updateStatusButton.disabled = true;
             } else {
-                if (selectedPlant === 'all') {
-                    filteredData = dataByBayAndPlant;
-                } else {
-                    for (var bay in dataByBayAndPlant) {
-                        if (dataByBayAndPlant[bay][selectedPlant]) {
-                            filteredData[bay] = { [selectedPlant]: dataByBayAndPlant[bay][selectedPlant] };
-                        }
-                    }
-                }
+                updateStatusButton.disabled = false;
             }
-
-            // Update the bar chart with filtered data
-            updateBarChart(filteredData);
         }
+
+        // Initial call to toggle button state
+        toggleUpdateButton();
+
+        // Event listener to toggle button state when select value changes
+        plantStatusSelect.addEventListener("change", toggleUpdateButton);
     });
 </script>
