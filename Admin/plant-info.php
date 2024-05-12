@@ -221,7 +221,7 @@ include('includes/navbar.php');
                 <main>
                     <div class="container-fluid px-3">
                         <!-- Main content -->
-                        <div class="card card-widget">
+                        <div class="card">
                         <div class="row">
                             <div class="col-xl-3">
                                 <div class="card">
@@ -246,100 +246,98 @@ include('includes/navbar.php');
                                 </div>
                             </div>
 
+                            <!-- INFO -->
+                    <div class="col-12 col-md- col-lg-5">
+                        <div class="card-header">
+                            PLANT INFORMATION
+                        </div>
+                        <div class="card-body">
+                            <form class="row g-3" method="post" action="code.php">
+                                <!-- Plant Name -->
+                                <div class="col-md-6">
+                                    <label for="plantName">Plant Name</label>
+                                    <input type="text" class="form-control" id="plant_name" name="plant_name" placeholder="Lettuce" value="<?= $getData['plant_name']; ?>" readonly>
+                                </div>
+                                <!-- Required pH Level -->
+                                <div class="col-md-3">
+                                    <label for="plantName">Required pH lvl</label>
+                                    <label for="ph_lvl_low"></label>
+                                    <input type="text" class="form-control text-center" id="ph_lvl_low" name="ph_lvl_low" placeholder="Low pH Level" value="<?= $getData['ph_lvl_low']; ?>" readonly>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="plantName" class="text-black"></label>
+                                    <label for="ph_lvl_high"></label>
+                                    <input type="text" class="form-control text-center" id="ph_lvl_high" name="ph_lvl_high" placeholder="High pH Level" value="<?= $getData['ph_lvl_high']; ?>" readonly>
+                                </div>
+                                <!-- Date Planted -->
+                                <div class="col-md-6">
+                                    <label>Date Planted</label>
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control" id="date_planted" name="date_planted" value="<?= date('M d, Y', strtotime($getData['date_planted'])); ?>" readonly>
+                                        <div class="input-group-append" data-target="#reservationdate">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
 
+                                <!-- Estimated Date Harvested -->
+                                <div class="col-md-6">
+                                    <label>
+                                        <?php
+                                        if ($getData['plant_status'] == 'Withered') {
+                                            echo 'Withered Date';
+                                        } elseif ($getData['plant_status'] == 'Harvested') {
+                                            echo 'Harvested Date';
+                                        } else {
+                                            echo 'Estimated Date Harvested';
+                                        }
+                                        ?>
+                                    </label>
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control" id="dateHarvested" readonly value="<?= ($getData['plant_status'] == 'Withered' || $getData['plant_status'] == 'Harvested') ? date('M d, Y', strtotime($getData['claim_date'])) : date('M d, Y', strtotime($getData['date_harvest'])) ?>" >
+                                        <div class="input-group-append" data-target="#reservationdate">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
 
-          <!-- INFO -->
-<div class="col-12 col-md- col-lg-4">
-    <div class="card-header">
-        PLANT INFORMATION
-    </div>
-    <div class="card-body">
-        <form class="row g-3" method="post" action="code.php">
-            <!-- Plant Name -->
-            <div class="col-md-6">
-                <label for="plantName">Plant Name</label>
-                <input type="text" class="form-control" id="plant_name" name="plant_name" placeholder="Lettuce" value="<?= $getData['plant_name']; ?>" readonly>
-            </div>
-            <!-- Required pH Level -->
-            <div class="col-md-3">
-                <label for="plantName">Required pH lvl</label>
-                <label for="ph_lvl_low"></label>
-                <input type="text" class="form-control text-center" id="ph_lvl_low" name="ph_lvl_low" placeholder="Low pH Level" value="<?= $getData['ph_lvl_low']; ?>" readonly>
-            </div>
-            <div class="col-md-3">
-                <label for="plantName" class="text-black"></label>
-                <label for="ph_lvl_high"></label>
-                <input type="text" class="form-control text-center" id="ph_lvl_high" name="ph_lvl_high" placeholder="High pH Level" value="<?= $getData['ph_lvl_high']; ?>" readonly>
-            </div>
-            <!-- Date Planted -->
-            <div class="col-md-6">
-                <label>Date Planted</label>
-                <div class="input-group date">
-                    <input type="text" class="form-control" id="date_planted" name="date_planted" value="<?= date('M d, Y', strtotime($getData['date_planted'])); ?>" readonly>
-                    <div class="input-group-append" data-target="#reservationdate">
-                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                <div class="col-md-3">
+                                    <label>BAY</label>
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control" id="bay" name="bay" placeholder="bay" value="<?= $getData['bay']; ?>">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Placement</label>
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control" id="nft" name="nft" placeholder="nft"  value="<?= $getData['nft']; ?>" readonly>
+                                    </div>
+                                </div>
+
+                                <?php
+                                $isWitheredOrHarvested = ($getData['plant_status'] == 'Withered' || $getData['plant_status'] == 'Harvested');
+                                $isPlanted = ($getData['plant_status'] == 'Planted');
+                                ?>
+                                <div class="col-md-6">
+                                    <label>Plant Status</label>
+                                    <select class="form-control" name="plant_status" id="plantStatusSelect" <?= $isWitheredOrHarvested ? 'disabled' : '' ?>>
+                                        <option value="" disabled>Select Plant Status</option>
+                                        <option value="Planted" <?= $isPlanted ? 'selected' : '' ?>>Planted</option>
+                                        <option value="Harvested" <?= ($getData['plant_status'] == 'Harvested') ? 'selected' : '' ?>>Harvested</option>
+                                        <option value="Withered" <?= ($getData['plant_status'] == 'Withered') ? 'selected' : '' ?>>Withered</option>
+                                    </select>
+                                </div>
+                                <input type="hidden" name="id" value="<?= $key_child ?>">
+
+                                <?php if ($getData['plant_status'] !== 'Withered' && $getData['plant_status'] !== 'Harvested'): ?>
+                                <div class="col-md-12 text-right mb-3">
+                                    <button type="submit" class="btn btn"  style="background-color: #2C3090 !important; color:white;" id="updateStatusButton">Update Status</button>
+                                </div>
+                                <?php endif; ?>
+                            </form>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Estimated Date Harvested -->
-            <div class="col-md-6">
-                <label>
-                    <?php
-                    if ($getData['plant_status'] == 'Withered') {
-                        echo 'Withered Date';
-                    } elseif ($getData['plant_status'] == 'Harvested') {
-                        echo 'Harvested Date';
-                    } else {
-                        echo 'Estimated Date Harvested';
-                    }
-                    ?>
-                </label>
-                <div class="input-group date">
-                    <input type="text" class="form-control" id="dateHarvested" readonly value="<?= ($getData['plant_status'] == 'Withered' || $getData['plant_status'] == 'Harvested') ? date('M d, Y', strtotime($getData['claim_date'])) : date('M d, Y', strtotime($getData['date_harvest'])) ?>" >
-                    <div class="input-group-append" data-target="#reservationdate">
-                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <label>BAY</label>
-                <div class="input-group date">
-                    <input type="text" class="form-control" id="bay" name="bay" placeholder="bay" value="<?= $getData['bay']; ?>">
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <label>Placement</label>
-                <div class="input-group date">
-                    <input type="text" class="form-control" id="nft" name="nft" placeholder="nft"  value="<?= $getData['nft']; ?>" readonly>
-                </div>
-            </div>
-
-            <?php
-            $isWitheredOrHarvested = ($getData['plant_status'] == 'Withered' || $getData['plant_status'] == 'Harvested');
-            $isPlanted = ($getData['plant_status'] == 'Planted');
-            ?>
-            <div class="col-md-6">
-                <label>Plant Status</label>
-                <select class="form-control" name="plant_status" id="plantStatusSelect" <?= $isWitheredOrHarvested ? 'disabled' : '' ?>>
-                    <option value="" disabled>Select Plant Status</option>
-                    <option value="Planted" <?= $isPlanted ? 'selected' : '' ?>>Planted</option>
-                    <option value="Harvested" <?= ($getData['plant_status'] == 'Harvested') ? 'selected' : '' ?>>Harvested</option>
-                    <option value="Withered" <?= ($getData['plant_status'] == 'Withered') ? 'selected' : '' ?>>Withered</option>
-                </select>
-            </div>
-            <input type="hidden" name="id" value="<?= $key_child ?>">
-
-            <?php if ($getData['plant_status'] !== 'Withered' && $getData['plant_status'] !== 'Harvested'): ?>
-            <div class="col-md-12 text-right mb-3">
-                <button type="submit" class="btn btn"  style="background-color: #2C3090 !important; color:white;" id="updateStatusButton">Update Status</button>
-            </div>
-            <?php endif; ?>
-        </form>
-    </div>
-</div>
 
 
 
@@ -380,19 +378,19 @@ include('includes/navbar.php');
                                 </div>
                             </div>
 
-
-
-
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                             <div class="card">
                             <div class="card-header">
                                         ESTIMATED HARVEST
-                                                            </div>
-                            <div class="text-center">
-                                <input id="knob" type="text" class="knob" value="39" data-skin="tron" data-thickness="0.2" data-width="250" data-height="250" data-fgColor="#2C3090" readonly>
-                                <div class="knob-label"><b>Days before Harvest</b></div>
+                               </div>
+                               <div class="card-body">
+                            <div class="text-center mt-5">
+                                <input id="knob" type="text" class="knob" data-width="100%" data-height="100%" data-fgColor="#2C3090" style="height: 100%; width:100%;" readonly>
+                                <!-- <div class="knob-label"><b>Days before Harvest</b></div> -->
                             </div>
                         </div>
+                        </div>
+
 </div>
 
 
@@ -459,7 +457,6 @@ include('includes/navbar.php');
                 <div class="card  card-outline">
                     <div class="card-header">
                         <h3 class="card-title">
-                            <!-- <i class="fa-solid fa-scale-unbalanced-flip"></i> -->
                             Current pH Level
                         </h3>
                         <div class="card-tools">
@@ -468,7 +465,7 @@ include('includes/navbar.php');
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="ph-value"></div>
+                        <div class="ph-value" style="height: 100%; width:100%;"></div>
                     </div>
                     <!-- /.card-body-->
                 </div>
@@ -487,7 +484,7 @@ include('includes/navbar.php');
                         </div>
                     </div>
                     <div class="card-body">
-                        <div id="interactive" style="height: 300px;"></div>
+                        <div id="interactive" style="height: 100%; width:100%;"></div>
                     </div>
                     <!-- /.card-body-->
                 </div>
@@ -501,14 +498,15 @@ include('includes/navbar.php');
     </div>
 
 </section>
-</div>
-</div>
 
 </div>
-</div>
-</div>
-</div>
+    </div>
+    </div>
+    </div>
 
+<?php
+include('includes/footer.php');
+?>
 
 
 
@@ -697,10 +695,6 @@ include('includes/navbar.php');
         setInterval(checkSwitch, 60000); // 1000 milliseconds = 1 second, adjust as needed
 </script>
 
-
-<?php
-include('includes/footer.php');
-?>
 
 <script>
 // Use JavaScript to periodically check the server for notifications
@@ -895,7 +889,7 @@ $(function () {
                         latestPhValue = parseFloat(latestPhValue).toFixed(1);
 
                         // Update the text element with the latest pH value and pH level text
-                        $('.ph-value').html('<div class="ph-value-text">pH level</div><div class="ph-value-number">' + latestPhValue + '</div>');
+                        $('.ph-value').html('<div class="ph-value-text">ph Level</div><div class="ph-value-number">' + latestPhValue + '</div>');
                     }
                 },
                 complete: function () {
